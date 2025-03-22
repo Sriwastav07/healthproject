@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function showForm(formType) {
+        if (formType === "signUp") {
+          document.getElementById("signInForm").classList.add("hidden");
+          document.getElementById("signUpForm").classList.remove("hidden");
+          document
+            .getElementById("signInTab")
+            .classList.remove("border-blue-500", "text-blue-500");
+          document
+            .getElementById("signUpTab")
+            .classList.add("border-blue-500", "text-blue-500");
+        } else {
+          document.getElementById("signInForm").classList.remove("hidden");
+          document.getElementById("signUpForm").classList.add("hidden");
+          document
+            .getElementById("signUpTab")
+            .classList.remove("border-blue-500", "text-blue-500");
+          document
+            .getElementById("signInTab")
+            .classList.add("border-blue-500", "text-blue-500");
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+    <div
+      class="flex flex-col md:flex-row bg-white p-6 md:p-8 rounded-2xl shadow-lg gap-6 w-full max-w-5xl"
+    >
+      <!-- Left Side: Health Analytics -->
+      <div class="space-y-6 w-full md:w-1/2">
+        <!-- First Section -->
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+          <img
+            src="img/img-1.jpeg"
+            alt="Health Data"
+            class="w-full md:w-1/2 rounded-xl shadow-md object-cover"
+          />
+          <p class="text-gray-700 text-sm w-full md:w-1/2">
+            We refine dirty data to unlock its hidden potential for healthcare
+            transformation.
+          </p>
+        </div>
+
+        <!-- Second Section -->
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+          <p class="text-gray-700 text-sm w-full md:w-1/2">Cost-Effective</p>
+          <img
+            src="img/img-2.jpeg"
+            alt="Healthcare Insights"
+            class="w-full md:w-1/2 rounded-xl shadow-md object-cover"
+          />
+        </div>
+
+        <!-- Third Section -->
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+          <img
+            src="img/img-3.jpeg"
+            alt="Predictive Analysis"
+            class="w-full md:w-1/2 rounded-xl shadow-md object-cover"
+          />
+          <p class="text-gray-700 text-sm w-full md:w-1/2">
+            View collective data of individual providers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Side: Sign In/Sign Up Panel -->
+      <div class="w-full md:w-1/2 max-w-sm mx-auto">
+        <!-- Tabs -->
+        <div class="flex justify-between border-b pb-2 mb-4">
+          <div
+            id="signInTab"
+            class="w-1/2 text-center cursor-pointer border-b-2 border-blue-500 text-blue-500 font-bold pb-2"
+            onclick="showForm('signIn')"
+          >
+            Sign In
+          </div>
+          <div
+            id="signUpTab"
+            class="w-1/2 text-center cursor-pointer border-b-2 text-gray-500 pb-2"
+            onclick="showForm('signUp')"
+          >
+            Sign Up
+          </div>
+        </div>
+
+        <!-- Sign In Form -->
+        <div
+          id="signInForm"
+          class="bg-blue-50 p-10 rounded-xl shadow-md w-full min-h-[350px]"
+        >
+          <h2 class="text-2xl font-bold text-center mb-4">Sign In</h2>
+          <label class="block text-gray-700">Username</label>
+          <input
+            type="text"
+            class="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Enter username"
+          />
+          <label class="block text-gray-700 mt-4">Password</label>
+          <input
+            type="password"
+            class="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Enter password"
+          />
+          <p class="text-right text-blue-500 text-sm mt-2 cursor-pointer">
+            Forgot Password?
+          </p>
+          <button class="w-full bg-blue-500 text-white p-3 rounded-md mt-4">
+            Login
+          </button>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div
+          id="signUpForm"
+          class="bg-blue-50 p-10 rounded-xl shadow-md w-full min-h-[350px] hidden"
+        >
+          <h2 class="text-2xl font-bold text-center mb-4">Sign Up</h2>
+          <label class="block text-gray-700">Username</label>
+          <input
+            type="text"
+            class="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Enter username"
+          />
+          <label class="block text-gray-700 mt-4">Email</label>
+          <input
+            type="email"
+            class="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Enter email"
+          />
+          <label class="block text-gray-700 mt-4">Password</label>
+          <input
+            type="password"
+            class="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="Enter password"
+          />
+          <button class="w-full bg-blue-500 text-white p-3 rounded-md mt-4">
+            Sign Up
+          </button>
+        </div>
+        <br />
+        <p class="text-center">Other sign-up option</p>
+        <div class="flex justify-evenly items-center gap-4 p-4">
+          <!-- X/Twitter Icon -->
+          <a href="#" class="hover:opacity-75 transition-opacity">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2023/08/X-Logo.png"
+              alt="X/Twitter"
+              class="w-8 h-8 object-contain"
+            />
+          </a>
+          <!-- Instagram Icon -->
+          <a href="#" class="hover:opacity-75 transition-opacity">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHP2W0X8Bj9Wwou8Y5Iv2q_Aa-nME9SMwEAA&s"
+              alt="Instagram"
+              class="w-8 h-8 object-contain"
+            />
+          </a>
+          <!-- Facebook Icon -->
+          <a href="#" class="hover:opacity-75 transition-opacity">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/2048px-Facebook_f_logo_%282021%29.svg.png"
+              alt="Facebook"
+              class="w-8 h-8 object-contain"
+            />
+          </a>
+          <!-- Gmail Icon -->
+          <a href="#" class="hover:opacity-75 transition-opacity">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
+              alt="Gmail"
+              class="w-8 h-8 object-contain"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
