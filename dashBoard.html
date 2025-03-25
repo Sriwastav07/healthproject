@@ -63,13 +63,14 @@
         <div class="bg-gray-200 p-6 rounded-lg shadow-xl border border-3 border-stone-500">
             <h2 class="text-lg font-bold mb-4">Health Records</h2>
             <div class="flex">
-                <img src="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" alt="Heart" class="w-70 h-70 shadow-xl rounded-xl">
+                <img id="health-button" src="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" alt="Heart" class="w-70 h-70 shadow-xl rounded-xl">
+                
                 <div class="ml-20">
                     <div class="flex space-x-4 mb-5">
-                        <button class="bg-indigo-600 px-4 py-1 rounded-2xl text-white shadow-xl">Heart</button>
-                        <button class="bg-white px-4 py-1 rounded-2xl shadow-xl">Brain</button>
-                        <button class="bg-white px-4 py-1 rounded-2xl shadow-xl">Kidney</button>
-                        <button class="bg-white px-4 py-1 rounded-2xl shadow-xl">Eyes</button>
+                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl text-white shadow-xl" data-image="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg">Heart</button>
+                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://imgk.timesnownews.com/story/stroke.gif?tr=w-600,h-450,fo-auto">Brain</button>
+                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://th.bing.com/th/id/R.8b64f829f8eefbcc629aaac2d34adf3b?rik=Kej%2bMVBsAkWKzQ&riu=http%3a%2f%2fmed.stanford.edu%2fcontent%2fdam%2fsm-news%2fimages%2f2014%2f06%2fkidney-stock.jpg&ehk=SY1cop7U3hcA%2f002Tpr7m9CTXwKeHez57MTQMWsHgNs%3d&risl=&pid=ImgRaw&r=0">Kidney</button>
+                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://d1xuqjt1wg0fxw.cloudfront.net/6f7d7e20-79cb-11ec-b57c-5106cb370ab1.jpg">Eyes</button>
                     </div>
                     <div class="grid grid-cols-3">
                         <div class="bg-gray-100 p-4 rounded-xl h-30 w-30 shadow-xl">
@@ -82,7 +83,7 @@
                         </div>
                         <div class="bg-gray-100 p-4 rounded-xl h-30 w-50 shadow-xl">
                             <h1>Foods to Avoid</h1>
-                            <img src="https://thumbs.dreamstime.com/b/hamburger-fries-fast-food-meal-milkshake-hamburger-fries-fast-food-meal-milkshake-typical-american-305386578.jpg" class="w-40 h-20">
+                            <img src="https://thumbs.dreamstime.com/b/hamburger-fries-fast-food-meal-milkshake-hamburger-fries-fast-food-meal-milkshake-typical-american-305386578.jpg" class="w-40 h-20">  
                         </div>
                     </div>
                     <div class="flex justify">
@@ -184,6 +185,21 @@
             </div>
         </div>
     </aside>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".health-image");
+        const healthImage = document.getElementById("health-button");
+    
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+            tabs.forEach((t) => t.classList.remove("bg-indigo-600", "text-white"));
+            this.classList.add("bg-indigo-600", "text-white");
 
+            const organ = this.getAttribute("data-image");
+            healthImage.src = organ;
+        });
+    });
+});
+</script>
 </body>
 </html>
