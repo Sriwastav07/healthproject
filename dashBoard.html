@@ -4,241 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 flex flex flex-col md:flex-row min-h-screen">
-    <!-- Sidebar -->
-    <aside class="w-full md:w-16 bg-gray-200 flex md:flex-col items-center py-4 justify-evenly rounded-2xl border border-gray-400 md:min-h-screen">
-        <button class="mb-4 border border-3"><img src="https://www.shutterstock.com/image-illustration/strong-healthy-human-heart-cardiology-260nw-1977507632.jpg" class="w-12 h-12"></button>
-        <button class="mb-4 pt-8"><i class="fa-solid fa-house fa-xl text-stone-600 hover:text-stone-900"></i></button>
-        <button class="mb-4 pt-8"><i class="fa-solid fa-calendar-days fa-xl text-stone-600 hover:text-stone-900"></i></button>
-        <button class="mb-4 pt-8"><i class="fa-solid fa-person-running fa-xl text-stone-600 hover:text-stone-900"></i></button>
-        <button class="mb-4 pt-8"><i class="fa-solid fa-user fa-xl text-stone-600 hover:text-stone-900"></i></button>
-        <button class="mb-4 pt-8"><i class="fa-solid fa-arrow-right-from-bracket fa-xl text-stone-600 hover:text-stone-900"></i></button>
-    </aside>
-    <!-- Main Content -->
-    <main class="flex-1 p-6">
-        <!-- Top Action Buttons -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 gap-4 mb-6">
-            <div class="bg-gradient-to-b from-white to-stone-500 p-4 rounded-xl shadow-xl text-center border border-3 border-violet-500">
-                <div class="flex justify pt-5 pl-5 gap-4">
-                <i class="fa-regular fa-calendar-check fa-2xl" style="color: #B197FC; --fa-rotate-angle: 320deg;"></i>
-                <h3 class="font-semibold text-lg pl-5">Appointments</h3>
-                </div>
-                <div class="pt-10">
-                    <p class="pb-5">Take Appointment</p>
-                    <i class="fa-solid fa-suitcase-medical fa-2xl" style="color: #52636b;"></i>
-                </div>
-                <button class="mt-13 bg-violet-500 text-white px-4 py-1 rounded-xl w-50 hover:text-lg">Appointment</button>
+<body class="bg-gray-100 min-h-screen">
+    <div class="flex flex-col md:flex-row relative">
+        <!-- Sidebar -->
+        <aside class="md:fixed z-10 w-full md:w-16 bg-gray-200 flex flex-row md:flex-col items-center py-4 justify-around md:min-h-screen rounded-b-lg md:rounded-r-2xl md:rounded-bl-none border border-gray-400">
+            <div class="p-2 rounded-full bg-white shadow-md mb-0 md:mb-6">
+                <i class="fa-solid fa-heart-pulse fa-xl text-rose-500"></i>
             </div>
-            <div class="bg-gradient-to-b from-white to-stone-500 p-4 rounded-xl shadow-xl text-center border border-3 border-violet-500">
-                <div class="flex justify pt-5 pl-5 gap-4">
-                <i class="fa-solid fa-square-phone fa-2xl" style="color: #da1b38;"></i>
-                <h3 class="font-semibold">Call Consultancy</h3>
-                </div>
-                <div class="pt-10">
-                    <p>Schedule</p>
-                    <p class="pb-5">4:00 Pm</p>
-                    <i class="fa-solid fa-phone-flip fa-2xl" style="color: #484f5b;"></i>
-                </div>
-                <button class="mt-8 bg-violet-500 text-white px-4 py-1 rounded-xl w-50 hover:text-lg">Call</button>
-            </div>
-            <div class="bg-gradient-to-b from-white to-stone-500 p-4 rounded-xl shadow-xl text-center border border-3 border-violet-500">
-                <div class="flex justify pt-5 pl-5 gap-4">
-                <i class="fa-solid fa-lungs-virus fa-2xl" style="color: #bacf54;"></i>
-                <h3 class="font-semibold">Medical Condition</h3>
-                </div>
-                <div class="pt-10">
-                    <i class="fa-solid fa-heart fa-2xl" style="color: #585d65;"></i>
-                    <p class="pb-5 pt-5">Normal</p>
-                </div>
-                <button class="mt-8 bg-violet-500 text-white px-4 py-1 rounded-xl w-50 hover:text-lg">Report</button>
-                
-            </div>
-        </div>
+            <button class="p-3 hover:bg-gray-300 rounded-full"><i class="fa-solid fa-house fa-lg text-stone-600 hover:text-stone-900"></i></button>
+            <button class="p-3 hover:bg-gray-300 rounded-full"><i class="fa-solid fa-calendar-days fa-lg text-yellow-500 hover:text-stone-900"></i></button>
+            <button class="p-3 hover:bg-gray-300 rounded-full"><i class="fa-solid fa-person-running fa-lg text-stone-600 hover:text-stone-900"></i></button>
+            <button class="p-3 hover:bg-gray-300 rounded-full"><i class="fa-solid fa-user fa-lg text-stone-600 hover:text-stone-900"></i></button>
+            <button class="p-3 hover:bg-gray-300 rounded-full"><i class="fa-solid fa-arrow-right-from-bracket fa-lg text-stone-600 hover:text-stone-900"></i></button>
+        </aside>
 
-        <!-- Health Records Section -->
-        <div class="bg-gray-200 p-6 rounded-lg shadow-xl border border-3 border-stone-500">
-            <h2 class="text-lg font-bold mb-4">Health Records</h2>
-            <div class="flex">
-                <img id="health-button" src="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" alt="Heart" class="w-70 h-70 shadow-xl rounded-xl">
-                
-                <div class="ml-20">
-                    <div class="flex space-x-4 mb-5">
-                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" rate-image="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg">Heart</button>
-                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://imgk.timesnownews.com/story/stroke.gif?tr=w-600,h-450,fo-auto" rate-image="https://www.shimadzu.com/research_and_development/kyolabs/img/field/brain/img01.png">Brain</button>
-                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://th.bing.com/th/id/R.8b64f829f8eefbcc629aaac2d34adf3b?rik=Kej%2bMVBsAkWKzQ&riu=http%3a%2f%2fmed.stanford.edu%2fcontent%2fdam%2fsm-news%2fimages%2f2014%2f06%2fkidney-stock.jpg&ehk=SY1cop7U3hcA%2f002Tpr7m9CTXwKeHez57MTQMWsHgNs%3d&risl=&pid=ImgRaw&r=0" rate-image="https://www.niddk.nih.gov/-/media/Images/Nkdep/NKDEP_GFR_DIAL_953x573.JPG?la=en&hash=CDD2EA5D555ABFA16F2BDFC3AAD892AB">Kidney</button>
-                        <button class="health-image bg-white text-stone-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://d1xuqjt1wg0fxw.cloudfront.net/6f7d7e20-79cb-11ec-b57c-5106cb370ab1.jpg" rate-image="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/ce572384-9100-4685-8c2d-9bde2f24105c/d6fmzpi-00b5771c-98b5-4c3f-94eb-65c706c06b11.png/v1/fill/w_966,h_828,strp/normal_eye_sight_chart_by_armandobaez1949_d6fmzpi-pre.png">Eyes</button>
-                    </div>
-                    <div class="grid grid-cols-3">
-                        <div class="bg-gray-100 p-4 rounded-xl h-30 w-30 shadow-xl">
-                        <h1>CT Scan</h1>
-                        <img src="https://image.slidesharecdn.com/risk-110209182622-phpapp01/95/risk-10-728.jpg?cb=1297276819">
+        <!-- Main Content -->
+        <main class="flex-1 md:ml-16 p-4">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Left Content -->
+                <div class="flex-1">
+                    <!-- Top Action Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-gradient-to-b from-white to-stone-200 p-4 rounded-xl shadow-md border-2 border-violet-500">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-regular fa-calendar-check fa-xl" style="color: #B197FC;"></i>
+                                <h3 class="font-semibold text-lg">Appointments</h3>
+                            </div>
+                            <div class="text-center py-4">
+                                <p class="mb-3">Take Appointment</p>
+                                <i class="fa-solid fa-suitcase-medical fa-xl text-stone-600 mb-4"></i>
+                            </div>
+                            <button class="w-full bg-violet-500 text-white px-4 py-2 rounded-xl hover:bg-violet-600 transition">Appointment</button>
                         </div>
-                        <div class="bg-gray-100 p-4 rounded-xl h-30 w-30 shadow-xl">
-                            <h1>ECG</h1>
-                            <img src="https://thumbs.dreamstime.com/x/complex-ecg-17200518.jpg">
+                        
+                        <div class="bg-gradient-to-b from-white to-stone-200 p-4 rounded-xl shadow-md border-2 border-violet-500">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-solid fa-square-phone fa-xl text-red-500"></i>
+                                <h3 class="font-semibold text-lg">Call Consultancy</h3>
+                            </div>
+                            <div class="text-center py-4">
+                                <p>Schedule</p>
+                                <p class="mb-3">4:00 PM</p>
+                                <i class="fa-solid fa-phone-flip fa-xl text-stone-600 mb-4"></i>
+                            </div>
+                            <button class="w-full bg-violet-500 text-white px-4 py-2 rounded-xl hover:bg-violet-600 transition">Call</button>
                         </div>
-                        <div class="bg-gray-100 p-4 rounded-xl h-30 w-50 shadow-xl">
-                            <h1>Foods to Avoid</h1>
-                            <img src="https://thumbs.dreamstime.com/b/hamburger-fries-fast-food-meal-milkshake-hamburger-fries-fast-food-meal-milkshake-typical-american-305386578.jpg" class="w-40 h-20">  
+                        
+                        <div class="bg-gradient-to-b from-white to-stone-200 p-4 rounded-xl shadow-md border-2 border-violet-500">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-solid fa-lungs-virus fa-xl text-lime-500"></i>
+                                <h3 class="font-semibold text-lg">Medical Condition</h3>
+                            </div>
+                            <div class="text-center py-4">
+                                <i class="fa-solid fa-heart fa-xl text-stone-600"></i>
+                                <p class="mb-3 mt-3">Normal</p>
+                            </div>
+                            <button class="w-full bg-violet-500 text-white px-4 py-2 rounded-xl hover:bg-violet-600 transition">Report</button>
                         </div>
                     </div>
-                    <div class="flex justify">
-                    <div class="mt-4 bg-white w-100 rounded-xl shadow-xl">
-                        <img src="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg" alt="heart rate" class="rate w-100 h-40 rounded-xl">
-                    </div>
-                    <div class="bg-white mt-4 ml-4 w-50 text-center rounded-xl shadow-xl">
-                        <p class="text-stone-600 pt-5">BloodPressure</p>
-                        <p class="font-bold">130/90 mm Hg</p>
-                        <p class="pt-5 text-stone-600">Pulse</p>
-                        <p class="font-bold">81 beats/min</p>
-                        <p class="pt-5 text-stone-600">Oxygen</p>
-                        <p class="font-bold">93%</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="bg-white p-6 rounded-xl shadow-xl border border-gray-300 mt-6">
-            <h2 class="text-xl font-semibold mb-4">Medical History</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-300">
-                    <thead>
-                        <tr class="bg-gray-200">
-                            <th class="py-2 px-4 border">Date</th>
-                            <th class="py-2 px-4 border">Condition</th>
-                            <th class="py-2 px-4 border">Doctor</th>
-                            <th class="py-2 px-4 border">Prescription</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="py-2 px-4 border">01-Apr-2025</td>
-                            <td class="py-2 px-4 border">Mild Fever</td>
-                            <td class="py-2 px-4 border">Dr. Smith</td>
-                            <td class="py-2 px-4 border">Paracetamol</td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 px-4 border">15-Mar-2025</td>
-                            <td class="py-2 px-4 border">Hypertension</td>
-                            <td class="py-2 px-4 border">Dr. Lee</td>
-                            <td class="py-2 px-4 border">Amlodipine</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
 
-    <!-- Right Sidebar (Appointments) -->
-    <aside class="w-full md:w-72 bg-gray-300 p-6 rounded-l-lg">
-        <h2 class="text-lg font-bold text-center border border-3 border-stone-500 w-full h-10 bg-gray-400">APPOINTMENT</h2>
-        <div class="bg-stone-900 p-4 rounded-lg mt-4 shadow h-160">
-            <div class="flex justify">
-            <h1 class="text-white">Calendar</h1>
-            <select class="bg-white ml-20 rounded-xl w-30">
-                <option>2025</option>
-                <option>2024</option>
-                <option>2026</option>
-            </select>
-            </div>
-            <div class="max-w-lg mx-auto mt-5 p-4 rounded-lg shadow-md">
-                <div class="grid grid-cols-7 gap-x-3 mt-4 text-sm">
-                    <!-- Days of the week -->
-                    <div class="flex justify gap-x-1">
-                    <p class="font-bold text-white">Sun</p>
-                    <p class="font-bold text-white">Mon</p>
-                    <p class="font-bold text-white">Tue</p>
-                    <p class="font-bold text-white">Wed</p>
-                    <p class="font-bold text-white">Thu</p>
-                    <p class="font-bold text-white">Fri</p>
-                    <p class="font-bold text-white">Sat</p>
+                    <!-- Health Records Section -->
+                    <div class="bg-gray-200 p-4 sm:p-6 rounded-lg shadow-md border-2 border-stone-500 mb-6">
+                        <h2 class="text-lg font-bold mb-4">Health Records</h2>
+                        <div class="flex flex-col lg:flex-row gap-6">
+                            <img id="health-image" src="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" alt="Heart" class="w-full lg:w-64 h-56 object-cover shadow-md rounded-xl">
+                            
+                            <div class="flex-1">
+                                <div class="flex flex-wrap gap-2 mb-5">
+                                    <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-md transition hover:bg-violet-500 hover:text-white" data-image="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" data-rate="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg">Heart</button>
+                                    <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-md transition hover:bg-violet-500 hover:text-white" data-image="https://imgk.timesnownews.com/story/stroke.gif?tr=w-600,h-450,fo-auto" data-rate="https://www.shimadzu.com/research_and_development/kyolabs/img/field/brain/img01.png">Brain</button>
+                                    <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-md transition hover:bg-violet-500 hover:text-white" data-image="https://th.bing.com/th/id/R.8b64f829f8eefbcc629aaac2d34adf3b?rik=Kej%2bMVBsAkWKzQ&riu=http%3a%2f%2fmed.stanford.edu%2fcontent%2fdam%2fsm-news%2fimages%2f2014%2f06%2fkidney-stock.jpg&ehk=SY1cop7U3hcA%2f002Tpr7m9CTXwKeHez57MTQMWsHgNs%3d&risl=&pid=ImgRaw&r=0" data-rate="https://www.niddk.nih.gov/-/media/Images/Nkdep/NKDEP_GFR_DIAL_953x573.JPG?la=en&hash=CDD2EA5D555ABFA16F2BDFC3AAD892AB">Kidney</button>
+                                    <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-md transition hover:bg-violet-500 hover:text-white" data-image="https://d1xuqjt1wg0fxw.cloudfront.net/6f7d7e20-79cb-11ec-b57c-5106cb370ab1.jpg" data-rate="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/ce572384-9100-4685-8c2d-9bde2f24105c/d6fmzpi-00b5771c-98b5-4c3f-94eb-65c706c06b11.png/v1/fill/w_966,h_828,strp/normal_eye_sight_chart_by_armandobaez1949_d6fmzpi-pre.png">Eyes</button>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                    <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                                        <h3 class="font-medium mb-2">CT Scan</h3>
+                                        <img src="https://image.slidesharecdn.com/risk-110209182622-phpapp01/95/risk-10-728.jpg?cb=1297276819" alt="CT Scan" class="w-full h-24 object-cover rounded">
+                                    </div>
+                                    <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                                        <h3 class="font-medium mb-2">ECG</h3>
+                                        <img src="https://thumbs.dreamstime.com/x/complex-ecg-17200518.jpg" alt="ECG" class="w-full h-24 object-cover rounded">
+                                    </div>
+                                    <div class="bg-gray-100 p-4 rounded-xl shadow-md">
+                                        <h3 class="font-medium mb-2">Foods to Avoid</h3>
+                                        <img src="https://thumbs.dreamstime.com/b/hamburger-fries-fast-food-meal-milkshake-hamburger-fries-fast-food-meal-milkshake-typical-american-305386578.jpg" alt="Foods to Avoid" class="w-full h-24 object-cover rounded">  
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <div class="flex-1 bg-white rounded-xl shadow-md overflow-hidden">
+                                        <img id="rate-image" src="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg" alt="Heart Rate" class="w-full h-40 object-cover">
+                                    </div>
+                                    <div class="bg-white p-4 w-full sm:w-48 text-center rounded-xl shadow-md">
+                                        <p class="text-stone-600">Blood Pressure</p>
+                                        <p class="font-bold mb-2">130/90 mm Hg</p>
+                                        <p class="text-stone-600">Pulse</p>
+                                        <p class="font-bold mb-2">81 beats/min</p>
+                                        <p class="text-stone-600">Oxygen</p>
+                                        <p class="font-bold">93%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-            
-                    <!-- Empty spaces for the first days of the month -->
-                    <div class="opacity-0"></div>
-                    <div class="opacity-0"></div>
-                    <div class="opacity-0"></div>
-                    <!-- <div class="opacity-0"></div> -->
-            
-                    <!-- Days of the month -->
-                    
-                    <div class="text-white py-2 pt-5">1</div>
-                    <div class="text-white py-2 pt-5">2</div>
-                    <div class="text-white py-2 pt-5">3</div>
-                    <div class="text-white py-2">4</div>
-                    <div class="text-white py-2">5</div>
-                    <div class="text-white py-2">6</div>
-            
-                    <div class="text-white py-2">7</div>
-                    <div class="text-white py-2">8</div>
-                    <div class="text-white py-2">9</div>
-                    <div class="text-white py-2">10</div>
-                    <div class="text-white py-2">11</div>
-                    <div class="text-white py-2">12</div>
-                    <div class="text-white py-2">13</div>
-            
-                    <div class="text-white py-2">14</div>
-                    <div class="text-white py-2">15</div>
-                    <div class="text-white py-2">16</div>
-                    <div class="text-white py-2">17</div>
-                    <div class="text-white py-2">18</div>
-                    <div class="text-white py-2">19</div>
-                    <div class="text-white py-2">20</div>
-            
-                    <div class="text-white py-2">21</div>
-                    <div class="text-white py-2 bg-violet-500 rounded-full w-5">22</div>
-                    <div class="text-white py-2">23</div>
-                    <div class="text-white py-2">24</div>
-                    <div class="text-white py-2">25</div>
-                    <div class="text-white py-2">26</div>
-                    <div class="text-white py-2">27</div>
-            
-                    <div class="text-white py-2">28</div>
-                    <div class="text-white py-2">29</div>
-                    <div class="text-white py-2">30</div>
-                    <div class="text-white py-2">31</div>
-                    
+
+                    <!-- Medical History Section -->
+                    <section class="bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-300">
+                        <h2 class="text-xl font-semibold mb-4">Medical History</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full bg-white border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-200">
+                                        <th class="py-2 px-4 border text-left">Date</th>
+                                        <th class="py-2 px-4 border text-left">Condition</th>
+                                        <th class="py-2 px-4 border text-left">Doctor</th>
+                                        <th class="py-2 px-4 border text-left">Prescription</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border">01-Apr-2025</td>
+                                        <td class="py-2 px-4 border">Mild Fever</td>
+                                        <td class="py-2 px-4 border">Dr. Smith</td>
+                                        <td class="py-2 px-4 border">Paracetamol</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">15-Mar-2025</td>
+                                        <td class="py-2 px-4 border">Hypertension</td>
+                                        <td class="py-2 px-4 border">Dr. Lee</td>
+                                        <td class="py-2 px-4 border">Amlodipine</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
                 </div>
+
+                <!-- Right Sidebar (Appointments) -->
+                <aside class="w-full lg:w-72 bg-gray-300 p-4 rounded-lg mt-6 lg:mt-0">
+                    <h2 class="text-lg font-bold text-center border-2 border-stone-500 p-2 bg-gray-400 rounded">APPOINTMENT</h2>
+                    <div class="bg-stone-900 p-4 rounded-lg mt-4 shadow">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-white font-medium">Calendar</h3>
+                            <select class="bg-white text-sm rounded-lg p-1">
+                                <option>2025</option>
+                                <option>2024</option>
+                                <option>2026</option>
+                            </select>
+                        </div>
+                        
+                        <div class="bg-stone-800 p-2 rounded-lg shadow-inner mb-4">
+                            <div class="grid grid-cols-7 text-center mb-2">
+                                <div class="text-white text-xs">S</div>
+                                <div class="text-white text-xs">M</div>
+                                <div class="text-white text-xs">T</div>
+                                <div class="text-white text-xs">W</div>
+                                <div class="text-white text-xs">T</div>
+                                <div class="text-white text-xs">F</div>
+                                <div class="text-white text-xs">S</div>
+                            </div>
+                            
+                            <div class="grid grid-cols-7 gap-1 text-center">
+                                <!-- Empty spaces for previous month -->
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                
+                                <!-- Days of the month -->
+                                <div class="text-white text-xs p-1">1</div>
+                                <div class="text-white text-xs p-1">2</div>
+                                <div class="text-white text-xs p-1">3</div>
+                                <div class="text-white text-xs p-1">4</div>
+                                <div class="text-white text-xs p-1">5</div>
+                                <div class="text-white text-xs p-1">6</div>
+                                <div class="text-white text-xs p-1">7</div>
+                                <div class="text-white text-xs p-1">8</div>
+                                <div class="text-white text-xs p-1">9</div>
+                                <div class="text-white text-xs p-1">10</div>
+                                <div class="text-white text-xs p-1">11</div>
+                                <div class="text-white text-xs p-1">12</div>
+                                <div class="text-white text-xs p-1">13</div>
+                                <div class="text-white text-xs p-1">14</div>
+                                <div class="text-white text-xs p-1">15</div>
+                                <div class="text-white text-xs p-1">16</div>
+                                <div class="text-white text-xs p-1">17</div>
+                                <div class="text-white text-xs p-1">18</div>
+                                <div class="text-white text-xs p-1">19</div>
+                                <div class="text-white text-xs p-1">20</div>
+                                <div class="text-white text-xs p-1">21</div>
+                                <div class="text-white text-xs p-1 bg-violet-500 rounded-full">22</div>
+                                <div class="text-white text-xs p-1">23</div>
+                                <div class="text-white text-xs p-1">24</div>
+                                <div class="text-white text-xs p-1">25</div>
+                                <div class="text-white text-xs p-1">26</div>
+                                <div class="text-white text-xs p-1">27</div>
+                                <div class="text-white text-xs p-1">28</div>
+                                <div class="text-white text-xs p-1">29</div>
+                                <div class="text-white text-xs p-1">30</div>
+                                <div class="text-white text-xs p-1">31</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold text-white mb-3">Today's Appointments</h3>
+                        <div class="space-y-3 mb-6">
+                            <div class="bg-stone-500 p-2 border-l-4 border-orange-300 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-user-tie" style="color: #fff93d;"></i>
+                                <span class="text-white text-sm">Rachel Greene</span>
+                            </div>
+                            <div class="bg-stone-500 p-2 border-l-4 border-green-300 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-user-tie" style="color: #68d47e;"></i>
+                                <span class="text-white text-sm">John Doe</span>
+                            </div>
+                            <div class="bg-stone-500 p-2 border-l-4 border-purple-500 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-user-tie" style="color: #bc39cd;"></i>
+                                <span class="text-white text-sm">Ben Affleck</span>
+                            </div>
+                            <div class="bg-stone-500 p-2 border-l-4 border-rose-400 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-user-tie" style="color: #e57b84;"></i>
+                                <span class="text-white text-sm">Karina</span>
+                            </div>
+                        </div>
+                        
+                        <section class="bg-white p-4 rounded-lg shadow-md border border-gray-300">
+                            <h2 class="text-lg font-semibold mb-2">Upcoming Health Events</h2>
+                            <p class="text-sm mb-4">Join our upcoming health awareness programs and medical check-up camps.</p>
+                            <button class="bg-violet-500 text-white px-4 py-2 rounded-lg hover:bg-violet-600 transition w-full">Click to Learn More</button>
+                        </section>
+                    </div>
+                </aside>
             </div>
-            <h3 class="mt-4 text-lg font-bold text-white">Today's Appointments</h3>
-            <div class="grid grid-row-4 gap-y-5">
-                <div class="bg-stone-500 h-10 border-l-5 border-orange-300 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #fff93d;"></i>
-                    Rachel Greene</div>
-                <div class="bg-stone-500 h-10 border-l-5 border-green-300 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #68d47e;"></i>John Doe</div>
-                <div class="bg-stone-500 h-10 border-l-5 border-purple-500 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #bc39cd;"></i>Ben Affleck</div>
-                <div class="bg-stone-500 h-10 border-l-5 border-rose-400 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #e57b84;"></i>Karina</div>
-            </div>
-            <section class="bg-white p-6 rounded-xl shadow-xl border border-gray-300 mt-25">
-                <h2 class="text-xl font-semibold mb-4">Upcoming Health Events</h2>
-                <p>Join our upcoming health awareness programs and medical check-up camps.</p>
-                <button class="border-gray-300 bg-violet-500 mt-10 h-10 rounded-2xl w-40 text-white">click for know more</button>
-            </section>
-        </div>
-    </aside>
+        </main>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".health-image");
-        const healthImage = document.getElementById("health-button");
-        const rateImage = document.querySelector(".rate");
-    tabs.forEach((tab) => {
-        tab.addEventListener("click", function (){
-                if(tab.classList.contains("bg-white", "text-stone-600")){
-                    tab.classList.remove("bg-white", "text-stone-600");
-                    tab.classList.add("bg-indigo-600", "text-white");
-                }else{
-                    tab.classList.remove("bg-indigo-600", "text-white");
-                    tab.classList.add("bg-white", "text-stone-600");
-                }
-            const organ = this.getAttribute("data-image");
-            healthImage.src = organ;
-            const rate = this.getAttribute("rate-image");
-            rateImage.src = rate;
+            const tabs = document.querySelectorAll(".health-image");
+            const healthImage = document.getElementById("health-image");
+            const rateImage = document.getElementById("rate-image");
+            
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", function () {
+                    // Reset all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove("bg-violet-500", "text-white");
+                        t.classList.add("bg-white", "text-stone-600");
+                    });
+                    
+                    // Activate clicked tab
+                    this.classList.remove("bg-white", "text-stone-600");
+                    this.classList.add("bg-violet-500", "text-white");
+                    
+                    // Update images
+                    const organImage = this.getAttribute("data-image");
+                    const rateChart = this.getAttribute("data-rate");
+                    
+                    healthImage.src = organImage;
+                    rateImage.src = rateChart;
+                });
+            });
+            
+            // Set first tab as active by default
+            if (tabs.length > 0) {
+                tabs[0].click();
+            }
         });
-    });
-});
     </script>
 </body>
 </html>
