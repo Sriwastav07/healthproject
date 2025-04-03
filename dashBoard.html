@@ -7,21 +7,20 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 flex">
-
+<body class="bg-gray-100 flex flex flex-col md:flex-row min-h-screen">
     <!-- Sidebar -->
-    <aside class="w-16 bg-gray-200 min-h-screen flex flex-col items-center py-4 justify-evenly rounded-2xl border border-gray-400">
-        <button class="mb-4 border border-3"><img src="https://www.shutterstock.com/image-illustration/strong-healthy-human-heart-cardiology-260nw-1977507632.jpg" ></button>
-        <button class="mb-4 pt-8"><a href="" class="hover:bg-stone-900 text-stone-600 hover:text-white hover:text-xl rounded-2xl"><i class="fa-solid fa-house fa-xl"></i></a></button>
-        <button class="mb-4 pt-8"><a href="" class="hover:bg-stone-900 text-stone-600 hover:text-white hover:text-xl rounded-2xl"><i class="fa-solid fa-calendar-days fa-xl"></i></a></button>
-        <button class="mb-4 pt-8"><a href="" class="hover:bg-stone-900 text-stone-600 hover:text-white hover:text-xl rounded-2xl"><i class="fa-solid fa-person-running fa-xl"></i></a></button>
-        <button class="mb-4 pt-8"><a href="" class="hover:bg-stone-900 text-stone-600 hover:text-white hover:text-xl rounded-2xl"><i class="fa-solid fa-user fa-xl"></i></a></button>
-        <button class="mb-4 pt-8"><a href="" class="hover:bg-stone-900 text-stone-600 hover:text-white hover:text-xl rounded-2xl"><i class="fa-solid fa-arrow-right-from-bracket fa-xl"></i></a></button>
+    <aside class="w-full md:w-16 bg-gray-200 flex md:flex-col items-center py-4 justify-evenly rounded-2xl border border-gray-400 md:min-h-screen">
+        <button class="mb-4 border border-3"><img src="https://www.shutterstock.com/image-illustration/strong-healthy-human-heart-cardiology-260nw-1977507632.jpg" class="w-12 h-12"></button>
+        <button class="mb-4 pt-8"><i class="fa-solid fa-house fa-xl text-stone-600 hover:text-stone-900"></i></button>
+        <button class="mb-4 pt-8"><i class="fa-solid fa-calendar-days fa-xl text-stone-600 hover:text-stone-900"></i></button>
+        <button class="mb-4 pt-8"><i class="fa-solid fa-person-running fa-xl text-stone-600 hover:text-stone-900"></i></button>
+        <button class="mb-4 pt-8"><i class="fa-solid fa-user fa-xl text-stone-600 hover:text-stone-900"></i></button>
+        <button class="mb-4 pt-8"><i class="fa-solid fa-arrow-right-from-bracket fa-xl text-stone-600 hover:text-stone-900"></i></button>
     </aside>
     <!-- Main Content -->
     <main class="flex-1 p-6">
         <!-- Top Action Buttons -->
-        <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 gap-4 mb-6">
             <div class="bg-gradient-to-b from-white to-stone-500 p-4 rounded-xl shadow-xl text-center border border-3 border-violet-500">
                 <div class="flex justify pt-5 pl-5 gap-4">
                 <i class="fa-regular fa-calendar-check fa-2xl" style="color: #B197FC; --fa-rotate-angle: 320deg;"></i>
@@ -67,10 +66,10 @@
                 
                 <div class="ml-20">
                     <div class="flex space-x-4 mb-5">
-                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl text-white shadow-xl" data-image="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg">Heart</button>
-                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://imgk.timesnownews.com/story/stroke.gif?tr=w-600,h-450,fo-auto">Brain</button>
-                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://th.bing.com/th/id/R.8b64f829f8eefbcc629aaac2d34adf3b?rik=Kej%2bMVBsAkWKzQ&riu=http%3a%2f%2fmed.stanford.edu%2fcontent%2fdam%2fsm-news%2fimages%2f2014%2f06%2fkidney-stock.jpg&ehk=SY1cop7U3hcA%2f002Tpr7m9CTXwKeHez57MTQMWsHgNs%3d&risl=&pid=ImgRaw&r=0">Kidney</button>
-                        <button class="health-image bg-indigo-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://d1xuqjt1wg0fxw.cloudfront.net/6f7d7e20-79cb-11ec-b57c-5106cb370ab1.jpg">Eyes</button>
+                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://as1.ftcdn.net/v2/jpg/05/61/75/38/1000_F_561753884_asG8VvPmXpaQinWX3imBR6rKoRr62cn7.jpg" rate-image="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg">Heart</button>
+                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://imgk.timesnownews.com/story/stroke.gif?tr=w-600,h-450,fo-auto" rate-image="https://www.shimadzu.com/research_and_development/kyolabs/img/field/brain/img01.png">Brain</button>
+                        <button class="health-image bg-white px-4 py-1 rounded-2xl text-stone-600 shadow-xl" data-image="https://th.bing.com/th/id/R.8b64f829f8eefbcc629aaac2d34adf3b?rik=Kej%2bMVBsAkWKzQ&riu=http%3a%2f%2fmed.stanford.edu%2fcontent%2fdam%2fsm-news%2fimages%2f2014%2f06%2fkidney-stock.jpg&ehk=SY1cop7U3hcA%2f002Tpr7m9CTXwKeHez57MTQMWsHgNs%3d&risl=&pid=ImgRaw&r=0" rate-image="https://www.niddk.nih.gov/-/media/Images/Nkdep/NKDEP_GFR_DIAL_953x573.JPG?la=en&hash=CDD2EA5D555ABFA16F2BDFC3AAD892AB">Kidney</button>
+                        <button class="health-image bg-white text-stone-600 px-4 py-1 rounded-2xl shadow-xl" data-image="https://d1xuqjt1wg0fxw.cloudfront.net/6f7d7e20-79cb-11ec-b57c-5106cb370ab1.jpg" rate-image="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/ce572384-9100-4685-8c2d-9bde2f24105c/d6fmzpi-00b5771c-98b5-4c3f-94eb-65c706c06b11.png/v1/fill/w_966,h_828,strp/normal_eye_sight_chart_by_armandobaez1949_d6fmzpi-pre.png">Eyes</button>
                     </div>
                     <div class="grid grid-cols-3">
                         <div class="bg-gray-100 p-4 rounded-xl h-30 w-30 shadow-xl">
@@ -88,7 +87,7 @@
                     </div>
                     <div class="flex justify">
                     <div class="mt-4 bg-white w-100 rounded-xl shadow-xl">
-                        <img src="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg" alt="heart rate" class="w-100 h-40 rounded-xl">
+                        <img src="https://healthy-ojas.com/sites/default/files/hypertension/hypertension-bloodpressure-heartrate.jpg" alt="heart rate" class="rate w-100 h-40 rounded-xl">
                     </div>
                     <div class="bg-white mt-4 ml-4 w-50 text-center rounded-xl shadow-xl">
                         <p class="text-stone-600 pt-5">BloodPressure</p>
@@ -102,10 +101,39 @@
                 </div>
             </div>
         </div>
+        <section class="bg-white p-6 rounded-xl shadow-xl border border-gray-300 mt-6">
+            <h2 class="text-xl font-semibold mb-4">Medical History</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="py-2 px-4 border">Date</th>
+                            <th class="py-2 px-4 border">Condition</th>
+                            <th class="py-2 px-4 border">Doctor</th>
+                            <th class="py-2 px-4 border">Prescription</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border">01-Apr-2025</td>
+                            <td class="py-2 px-4 border">Mild Fever</td>
+                            <td class="py-2 px-4 border">Dr. Smith</td>
+                            <td class="py-2 px-4 border">Paracetamol</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border">15-Mar-2025</td>
+                            <td class="py-2 px-4 border">Hypertension</td>
+                            <td class="py-2 px-4 border">Dr. Lee</td>
+                            <td class="py-2 px-4 border">Amlodipine</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <!-- Right Sidebar (Appointments) -->
-    <aside class="w-72 bg-gray-300 p-6 rounded-l-lg">
+    <aside class="w-full md:w-72 bg-gray-300 p-6 rounded-l-lg">
         <h2 class="text-lg font-bold text-center border border-3 border-stone-500 w-full h-10 bg-gray-400">APPOINTMENT</h2>
         <div class="bg-stone-900 p-4 rounded-lg mt-4 shadow h-160">
             <div class="flex justify">
@@ -183,23 +211,34 @@
                 <div class="bg-stone-500 h-10 border-l-5 border-purple-500 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #bc39cd;"></i>Ben Affleck</div>
                 <div class="bg-stone-500 h-10 border-l-5 border-rose-400 pl-5 pt-2 rounded-lg"><i class="fa-solid fa-user-tie fa-lg" style="color: #e57b84;"></i>Karina</div>
             </div>
+            <section class="bg-white p-6 rounded-xl shadow-xl border border-gray-300 mt-25">
+                <h2 class="text-xl font-semibold mb-4">Upcoming Health Events</h2>
+                <p>Join our upcoming health awareness programs and medical check-up camps.</p>
+                <button class="border-gray-300 bg-violet-500 mt-10 h-10 rounded-2xl w-40 text-white">click for know more</button>
+            </section>
         </div>
     </aside>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         const tabs = document.querySelectorAll(".health-image");
         const healthImage = document.getElementById("health-button");
-    
+        const rateImage = document.querySelector(".rate");
     tabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-            tabs.forEach((t) => t.classList.remove("bg-indigo-600", "text-white"));
-            this.classList.add("bg-indigo-600", "text-white");
-
+        tab.addEventListener("click", function (){
+                if(tab.classList.contains("bg-white", "text-stone-600")){
+                    tab.classList.remove("bg-white", "text-stone-600");
+                    tab.classList.add("bg-indigo-600", "text-white");
+                }else{
+                    tab.classList.remove("bg-indigo-600", "text-white");
+                    tab.classList.add("bg-white", "text-stone-600");
+                }
             const organ = this.getAttribute("data-image");
             healthImage.src = organ;
+            const rate = this.getAttribute("rate-image");
+            rateImage.src = rate;
         });
     });
 });
-</script>
+    </script>
 </body>
 </html>
